@@ -72,13 +72,13 @@ class OtktGenerator extends AbstractGenerator {
 		}
 
 		// instantiate generators
-		// instatiate kiekerexporter generator
+		// instatiate KiekerExporter generator
 		val pythonExporterGen = new PythonOtelSdkGenerator(records, otelSpan, mappingList)
 		val result = pythonExporterGen.generate()
-		fsa.generateFile('otkt/kiekerexporter.py', result)
+		fsa.generateFile('otkt/KiekerExporter.py', result)
         
         var OtelInitGenerator otelInit = new OtelInitGenerator(true)
-		// instatiate kiekerprocessor generator, 
+		// instatiate KiekerProcessor generator, 
 		// if we have any attribute that must be pdated either globaly or parently
 		if (!(globalyModifiedAttributes.isEmpty && parentlyModifiedAttributes.isEmpty) ||
 			!(this.globalModified.isEmpty && this.parentModified.isEmpty)) {
@@ -86,7 +86,7 @@ class OtktGenerator extends AbstractGenerator {
 			val pythonProcessorGen = new PythonProcessorSdk(globalyModifiedAttributes, parentlyModifiedAttributes,
 				globalModified, parentModified)
 			val resultProcessor = pythonProcessorGen.generate()
-			fsa.generateFile('otkt/kiekerprocessor.py', resultProcessor)
+			fsa.generateFile('otkt/KiekerProcessor.py', resultProcessor)
 			fsa.generateFile('otkt/otelinit.py', otelInit.generate)
 
 		}else{
