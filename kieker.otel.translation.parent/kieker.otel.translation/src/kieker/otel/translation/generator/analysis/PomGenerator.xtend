@@ -59,7 +59,7 @@ class PomGenerator {
 					</plugin>
 					</plugins>
 					</build>
-				  <dependencies>
+			<dependencies>
 				<dependency>
 				  <groupId>net.kieker-monitoring</groupId>
 				  <artifactId>kieker</artifactId>
