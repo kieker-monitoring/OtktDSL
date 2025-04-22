@@ -13,8 +13,6 @@ import kieker.otel.translation.specification.KiekerRecordSpecification
 import kieker.otel.translation.otkt.KiekerMonitoringType
 import kieker.otel.translation.otkt.DefaultMonitoringRecord
 import kiekerrecord.KiekerRecord
-import java.util.Map
-import java.util.HashMap
 
 class PythonOtelSdkGenerator {
 

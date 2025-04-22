@@ -10,7 +10,6 @@ import org.eclipse.xtext.validation.Check;
 import kieker.otel.translation.otkt.CustomMapping;
 import kieker.otel.translation.otkt.DefaultAttributes;
 import kieker.otel.translation.otkt.KiekerReference;
-import kieker.otel.translation.otkt.Mapping;
 import kieker.otel.translation.otkt.MappingRule;
 import kieker.otel.translation.otkt.NewRecord;
 import kieker.otel.translation.otkt.OtelRef;

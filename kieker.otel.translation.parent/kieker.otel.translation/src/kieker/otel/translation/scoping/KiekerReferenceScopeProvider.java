@@ -1,22 +1,14 @@
 package kieker.otel.translation.scoping;
 
-import java.util.List;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
-import org.eclipse.xtext.scoping.impl.AbstractGlobalScopeProvider;
-import org.eclipse.xtext.scoping.impl.AbstractScopeProvider;
 
 import kieker.otel.translation.otkt.KiekerReference;
 import kieker.otel.translation.otkt.NewRecord;
 import kieker.otel.translation.otkt.OtktPackage;
-import kieker.otel.translation.otkt.RecordAttribute;
-import kieker.otel.translation.otkt.KiekerMonitoringType;
 import kiekerrecord.KiekerRecord;
 
 public class KiekerReferenceScopeProvider extends AbstractDeclarativeScopeProvider {

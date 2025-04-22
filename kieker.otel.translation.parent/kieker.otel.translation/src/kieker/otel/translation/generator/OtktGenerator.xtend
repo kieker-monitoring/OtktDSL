@@ -9,9 +9,6 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import kieker.otel.translation.generator.python.PythonOtelSdkGenerator
 import kieker.otel.translation.otkt.Mapping
-import org.eclipse.emf.common.util.BasicEList
-//import kieker.otel.translation.otkt.SpanParam
-import kieker.otel.translation.otkt.NewRecord
 import kieker.otel.translation.otkt.OtelSpan
 
 import kieker.otel.translation.generator.analysis.AnalysisGenerator
@@ -22,10 +19,7 @@ import kieker.otel.translation.otkt.DefaultMapping
 import kieker.otel.translation.specification.KiekerRecordSpecification
 import kiekerrecord.KiekerRecord
 import org.eclipse.emf.common.util.EList
-import java.util.HashMap
-import mappingModel.Annotation
 import java.util.List
-import kieker.otel.translation.otkt.SpanAttribute
 import kieker.otel.translation.generator.python.OtelInitGenerator
 
 /**
@@ -107,7 +101,7 @@ class OtktGenerator extends AbstractGenerator {
 	
 	def  extractGlobalOrParentlyAttributes(KiekerRecord record, EList<mappingModel.Mapping> mappings) {
 		val recordName = record.getFqClassName
-		val filteredMappings = mappings.filter[it.getRecordFQClassName.equals(recordName)]
+		//val filteredMappings = mappings.filter[it.getRecordFQClassName.equals(recordName)]
 		for (mapping : mappings) {
 			if (recordName.equals(mapping.getRecordFQClassName)) {
 				for (rule : mapping.getMappingRules) {

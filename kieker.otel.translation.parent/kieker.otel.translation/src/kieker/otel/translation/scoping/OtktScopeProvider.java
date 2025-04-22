@@ -3,14 +3,6 @@
  */
 package kieker.otel.translation.scoping;
 
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.xtext.scoping.IScope;
-import org.eclipse.xtext.scoping.Scopes;
-
-import kieker.otel.translation.otkt.KiekerReference;
-import kieker.otel.translation.otkt.KiekerMonitoringType;
-import kieker.otel.translation.otkt.NewRecord;
-
 /**
  * This class contains custom scoping description.
  * 

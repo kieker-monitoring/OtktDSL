@@ -21,7 +21,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		if (args.length == 0) {
-			System.err.println("Expected Arguments: <path/to/input.otkt> <path/to/output/folder");
+			System.err.println("Expected Arguments: <path/to/input.otkt> <path/to/output/folder>");
 			return;
 		}
 		Injector injector = new OtktStandaloneSetup().createInjectorAndDoEMFRegistration();

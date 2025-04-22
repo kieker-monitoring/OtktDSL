@@ -1,9 +1,6 @@
 package kieker.otel.translation.generator.analysis
 
-
 import kieker.otel.translation.otkt.NewRecord
-import kieker.otel.translation.otkt.RecordAttribute
-
 
 class CustomRecordGenerator {
 	

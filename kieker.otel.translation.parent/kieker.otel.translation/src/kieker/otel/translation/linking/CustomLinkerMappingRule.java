@@ -1,6 +1,5 @@
 package kieker.otel.translation.linking;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -118,7 +117,7 @@ public class CustomLinkerMappingRule extends DefaultLinkingService {
 	    
 	    private EObject resolveUserDefinedRecord(EObject context, String id) {
 	        // Logic to resolve a UserDefinedObject by ID
-	    	List result = new ArrayList();
+	    	//List result = new ArrayList();
 	        ResourceSet resourceSet = context.eResource().getResourceSet();
 	        for (Resource resource : resourceSet.getResources()) {
 	            for (EObject obj : resource.getContents()) {

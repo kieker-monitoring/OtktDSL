@@ -4,11 +4,9 @@
 package kieker.otel.translation;
 
 import org.eclipse.xtext.linking.ILinkingService;
-import org.eclipse.xtext.scoping.IGlobalScopeProvider;
 import org.eclipse.xtext.scoping.IScopeProvider;
 
 import kieker.otel.translation.linking.CustomLinkerMappingRule;
-import kieker.otel.translation.model.ModelGlobalScopeProvider;
 import kieker.otel.translation.scoping.CompositeScopes;
 
 
