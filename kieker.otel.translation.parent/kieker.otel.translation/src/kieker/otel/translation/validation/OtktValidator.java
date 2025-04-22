@@ -78,9 +78,7 @@ public class OtktValidator extends AbstractOtktValidator {
 	public void checkMappingRuleForFlow(MappingRule rule) {
 		OtelRef left = rule.getLeftSide();
 		KiekerReference right = rule.getRightSide();
-		boolean test1 = right.getRefEntity() instanceof NewRecord;
-		boolean test2 =  left.getRefAttribute() instanceof SpanAttribute;
-		boolean test3 = right.getRefAttribute() instanceof RecordAttribute;
+		
 		if (right.getRefEntity() instanceof NewRecord && left.getRefAttribute() instanceof SpanAttribute
 				&& right.getRefAttribute() instanceof RecordAttribute) {
 			NewRecord record = (NewRecord) right.getRefEntity();
