@@ -1,4 +1,4 @@
-# OpenTelemetry for Kieker Transaltion Domain Specific Language (Otkt DSL)
+# OpenTelemetry for Kieker Translator domain-pecific language (Otkt DSL)
 
 ## Authors
 
