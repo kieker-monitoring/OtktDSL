@@ -4,8 +4,8 @@
 
 ## General process
 
-- [General process](img/otkt_general_process.svg)
+![General process](img/otkt_general_process.svg)
 
 ## Otkt output
 
-- [Otkt output](img/otkt_gen.svg)
+![Otkt output](img/otkt_gen.svg)
