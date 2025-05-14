@@ -1,6 +1,6 @@
 # OpenTelemetry for Kieker Translator domain-specific language (Otkt DSL)
 
-![Otkt logo](docs/otkt_logo.svg)
+![Otkt logo](docs/img/otkt_logo.svg)
 
 ## Authors
 
