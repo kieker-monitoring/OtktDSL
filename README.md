@@ -1,7 +1,5 @@
 # OpenTelemetry for Kieker Translator domain-specific language (Otkt DSL)
 
-![Otkt logo](docs/otkt_logo.svg)
-
 ## Authors
 
 - Serafim Simonov <serafim.simonov@email.uni-kiel.de>
