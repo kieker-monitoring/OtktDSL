@@ -1,5 +1,7 @@
 # OpenTelemetry for Kieker Translator domain-specific language (Otkt DSL)
 
+![Otkt logo](docs/otkt_logo.svg)
+
 ## Authors
 
 - Serafim Simonov <serafim.simonov@email.uni-kiel.de>
@@ -15,3 +17,4 @@ The Kieker observability framework features monitoring and analysis capabilities
 - [Building the compiler](docs/BUILD-COMPILER.md)
 - [Using the compiler](docs/BUILD.md)
 - [Otkt Tutorial](docs/OTKT-TUTORIAL.md)
+
