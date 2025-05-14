@@ -1,4 +1,8 @@
-## Build from Eclipse IDE
+# Build Compiler
+
+- [Main page](../README.md)
+
+## From Eclipse IDE
 
 This was developped using the Eclipse IDE for Java and DSL Developpers.
 

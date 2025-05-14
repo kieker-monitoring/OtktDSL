@@ -1,5 +1,7 @@
 # Building an Otkt DSL program
 
+- [Main page](../README.md)
+
 ## Introduction to the Otkt DSL
 
 The following Otkt demo program defines a mapping from an OTel Span to a Kieker OperationExecutionRecord.

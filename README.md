@@ -17,4 +17,6 @@ The Kieker observability framework features monitoring and analysis capabilities
 - [Building the compiler](docs/BUILD-COMPILER.md)
 - [Using the compiler](docs/BUILD.md)
 - [Otkt Tutorial](docs/OTKT-TUTORIAL.md)
+- [How to Instrument a Python Application](docs/INSTRUMENT.md)
+- [Technical Overview](docs/TECHNICAL-SUMMARY.md)
 

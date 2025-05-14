@@ -1,3 +1,7 @@
+# Otkt Tutorial
+
+ - [Main page](../README.md)
+
 Let's go through basics of out Otkt that you will need to complete the Coding task of our survey.
 
 ## Spans Declaration
