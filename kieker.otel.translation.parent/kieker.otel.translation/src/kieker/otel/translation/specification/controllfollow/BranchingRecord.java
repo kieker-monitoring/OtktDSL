@@ -4,7 +4,6 @@ import kieker.otel.translation.specification.Util;
 import kiekerrecord.Attribute;
 import kiekerrecord.KiekerRecord;
 import mappingModel.Mapping;
-import mappingModel.MappingModel;
 import mappingModel.MappingRule;
 import mappingModel.ParamType;
 import mappingModel.SpanParam;

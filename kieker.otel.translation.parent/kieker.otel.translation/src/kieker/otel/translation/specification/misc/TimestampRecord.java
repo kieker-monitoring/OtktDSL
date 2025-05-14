@@ -26,9 +26,7 @@ public class TimestampRecord {
 	public static Mapping createMapping() {
 		Mapping mapping = Util.MAPPING_FACTORY.createMapping();
 		MappingRule mappingRule =  Util.MAPPING_FACTORY.createMappingRule();
-		MappingRule mappingRule2 =  Util.MAPPING_FACTORY.createMappingRule();
 
-		//MappingRule mappingRule5 =  Util.MAPPING_FACTORY.createMappingRule();
 		mapping.setRecordFQClassName("kieker.common.record.misc.TimestampRecord");
 		
 		SpanParam span = Util.MAPPING_FACTORY.createSpanParam();
@@ -37,17 +35,10 @@ public class TimestampRecord {
 		span.setParamType(ParamType.ATTRIBUTE);
 		span.setType(Type.STRING);
 		mappingRule.setFrom(span);
-		
-
-		
 
 		mapping.getMappingRules().add(mappingRule);
-
-
-		return mapping;
 		
-
-		
+		return mapping;		
 	}
 	
 }

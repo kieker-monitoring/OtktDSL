@@ -1,14 +1,8 @@
 package kieker.otel.translation.generator
 
-import java.util.Map
-import java.util.HashMap
-import kieker.otel.translation.otkt.Mapping
 import org.eclipse.emf.ecore.EObject
 
 import java.util.LinkedHashMap
-import org.eclipse.emf.common.util.EList
-import java.util.ArrayList
-import org.eclipse.emf.common.util.AbstractEList
 import org.eclipse.emf.common.util.BasicEList
 import kieker.otel.translation.otkt.CustomMapping
 import kieker.otel.translation.otkt.SpanAttribute

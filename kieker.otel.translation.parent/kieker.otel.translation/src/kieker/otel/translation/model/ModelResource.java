@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 
 import kieker.otel.translation.specification.*;
-import kiekerrecord.Attribute;
 import kiekerrecord.KiekerRecord;
 import kiekerrecord.KiekerRecordModel;
 import kiekerrecord.KiekerrecordPackage;
