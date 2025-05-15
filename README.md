@@ -4,7 +4,7 @@
 
 ## Authors
 
-- Serafim Simonov <stu126367@mail.uni-kiel.de>
+- Serafim Simonov, M.Sc. <simonovserafim@gmail.com>
 - Daphné Larrivain <daphne.larrivain@ecole.ensicaen.fr>
 - Dr. Shinhyung Yang <shinhyung.yang@email.uni-kiel.de>
 
