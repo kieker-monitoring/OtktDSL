@@ -10,7 +10,7 @@
 
 ## About
 
-The Kieker observability framework features monitoring and analysis capabilities. OpenTelemetry, in comparison, provides means to monitor the program but no analysis. Otkt DSL can define a mapping from an OpenTelemetry Span to a Kieker record. Using Otkt, we can use OpenTelemetry to collect monitoring data from a Python program and send it to a Kieker Analysis endpoint. In this repository you will find the Otkt compiler, using its own Otkt domain specific language.
+The Kieker observability framework features monitoring and analysis capabilities. OpenTelemetry, in comparison, provides means to monitor the program but no analysis by itself. The goal of Otkt DSL is to define a mapping from an OpenTelemetry span to a Kieker record. Using Otkt, we can use OpenTelemetry to collect monitoring data from a Python program and send it to a Kieker collector. In this repository you will find the Otkt compiler.
 
 ## Build
 
