@@ -10,6 +10,6 @@
 
 ![Otkt output](img/otkt_gen.svg)
 
-# Otkt serialization process
+## Otkt serialization process
 
 ![Otkt serialization](img/otkt_serialization_process.svg)
