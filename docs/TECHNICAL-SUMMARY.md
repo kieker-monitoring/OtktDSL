@@ -12,4 +12,4 @@
 
 # Otkt serialization process
 
-![Otkt serialization](img/otkt_serialization.svg)
+![Otkt serialization](img/otkt_serialization_process.svg)

@@ -35,6 +35,11 @@ mvn clean
 cd ..
 ```
 
+## Examples
+
+- [Instrumentation Examples](https://github.com/Misrobody/kieker-otel-interoperability)
+- [Sustain Kieker Hackathon](https://github.com/kieker-monitoring/SustainKiekerHackathon)
+
 ## Documentation
 
 - [Building the compiler within the Eclipse IDE](docs/BUILD-ECLIPSE.md)
