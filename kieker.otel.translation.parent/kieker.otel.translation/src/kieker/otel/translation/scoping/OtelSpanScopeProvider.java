@@ -33,7 +33,7 @@ public class OtelSpanScopeProvider extends AbstractDeclarativeScopeProvider {
             //	IScope trace = Scopes.scopeFor(Collections.singletonList(((OtelSpan)refEntity).getTrace()));
             //	IScope parentTrace = Scopes.scopeFor(Collections.singletonList(((OtelSpan)refEntity).getParentTrace()));
             	EList <DefaultAttributes> defaults = ((OtelSpan)refEntity).getDefaultAttributes();
-            	EList <SpanAttribute> defaultattrs = new BasicEList();
+            	EList <SpanAttribute> defaultattrs = new BasicEList<SpanAttribute>();
             	for(DefaultAttributes attr : defaults) {
             		
             		defaultattrs.add(getSpanAttrFromDefaultAttr(attr));

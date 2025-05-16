@@ -1,6 +1,5 @@
 package kieker.otel.translation.generator.python
 
-
 import kieker.otel.translation.otkt.OtelSpan
 import java.util.ArrayList
 import java.util.List
@@ -199,33 +198,26 @@ time = TimeStamp()
 	private def List<CustomMapping> getMapping(NewRecord kiekerRecord) {
 		var result = new ArrayList
 		for (mapping : this.mappings) {
-			if (mapping instanceof CustomMapping) {
-				if (kiekerRecord instanceof NewRecord) {
-					var record = mapping.getTo
-					if (record instanceof NewRecord) {
-						if (record.getName.equals(kiekerRecord.getName))
-							result.add(mapping)
-					}
+			if (mapping instanceof CustomMapping) {	
+				var record = mapping.getTo
+				if (record instanceof NewRecord) {
+					if (record.getName.equals(kiekerRecord.getName))
+						result.add(mapping)
 				}
-
 			}
 		}
-
 		return result
 	}
 	
-		private def List<CustomMapping> getMapping(DefaultMonitoringRecord kiekerRecord) {
+	private def List<CustomMapping> getMapping(DefaultMonitoringRecord kiekerRecord) {
 		var result = new ArrayList
 		for (mapping : this.mappings) {
 			if (mapping instanceof CustomMapping) {
-				if (kiekerRecord instanceof DefaultMonitoringRecord) {
-					var record = mapping.getTo
-					if (record instanceof KiekerRecord) {
-						if (record.getName.equals(kiekerRecord.getName.getName))
-							result.add(mapping)
-					}
+				var record = mapping.getTo
+				if (record instanceof KiekerRecord) {
+					if (record.getName.equals(kiekerRecord.getName.getName))
+						result.add(mapping)
 				}
-
 			}
 		}
 		return result
@@ -235,20 +227,13 @@ time = TimeStamp()
 		var result = new ArrayList
 		for (mapping : this.mappings) {
 			if (mapping instanceof DefaultMapping) {
-					var record = mapping.getTo
-					if (record instanceof KiekerRecord) {
-						if (record.getName.equals(kiekerRecord.getName.getName))
-							result.add(mapping)
-					}
-				
-
+				var record = mapping.getTo
+				if (record.getName.equals(kiekerRecord.getName.getName))
+					result.add(mapping)
 			}
 		}
 		return result
 	}
-	
-
-
 }
 	
 

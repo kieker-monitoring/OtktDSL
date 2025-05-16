@@ -2,12 +2,12 @@ package kieker.otel.translation.generator.analysis.collector
 
 class TeeTimeConfigGenerator {
 	
-	int port
-	int buffersize
+	//int port
+	//int buffersize
 	boolean converter
 	 new(int port, int buffersize, boolean converter){
-		this.port = port
-		this. buffersize = buffersize
+		//this.port = port
+		//this. buffersize = buffersize
 		this.converter = converter
 	}
 	def generate(){

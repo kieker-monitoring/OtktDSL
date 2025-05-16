@@ -14,6 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.release>17</maven.compiler.release>
     <mavenOpts>-T 1C</mavenOpts>
     <tycho-version>4.0.8</tycho-version>
   </properties>
@@ -133,6 +134,8 @@
             </filesets>
           </configuration>
         </plugin>
+        
+        <!--
         <plugin>
           <groupId>org.eclipse.m2e</groupId>
           <artifactId>lifecycle-mapping</artifactId>
@@ -166,6 +169,8 @@
             </lifecycleMappingMetadata>
           </configuration>
         </plugin>
+        -->
+
         <plugin>
           <!--
 						Can be removed after first generator execution
@@ -227,11 +232,13 @@
   </profiles>
 
   <dependencies>
+  	<!--
     <dependency>
       <groupId>org.eclipse.emf</groupId>
       <artifactId>org.eclipse.emf.mwe2.launch</artifactId>
-      <version>2.11.0</version>
+      <version>2.19.0</version>
     </dependency>
+    -->
     <dependency>
       <groupId>org.eclipse.xtext</groupId>
       <artifactId>org.eclipse.xtext.common.types</artifactId>

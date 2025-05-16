@@ -4,8 +4,8 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import kieker.otel.translation.otkt.NewRecord
 import java.util.List
 import org.eclipse.emf.ecore.resource.Resource
-import kieker.otel.translation.otkt.Mapping
-import kieker.otel.translation.otkt.OtelSpan
+//import kieker.otel.translation.otkt.Mapping
+//import kieker.otel.translation.otkt.OtelSpan
 import kieker.otel.translation.generator.analysis.CustomRecordFactoryGenerator
 import kieker.otel.translation.generator.analysis.CustomRecordGenerator
 import kieker.otel.translation.otkt.Collector
@@ -16,16 +16,16 @@ import kieker.otel.translation.otkt.KiekerMonitoringType
 class AnalysisGenerator {
 
 	List<KiekerMonitoringType> records;
-	Mapping mapping
-	OtelSpan otelspan
+	//Mapping mapping
+	//OtelSpan otelspan
 	Collector collector
-	Resource resource
+	//Resource resource
 
 	new(List<KiekerMonitoringType> records, Resource resource) {
 		this.records = records
-		this.mapping = resource.allContents.filter(Mapping).toList().get(0)
-		this.otelspan = resource.allContents.filter(OtelSpan).toList().get(0)
-		this.resource = resource
+		//this.mapping = resource.allContents.filter(Mapping).toList().get(0)
+		//this.otelspan = resource.allContents.filter(OtelSpan).toList().get(0)
+		//this.resource = resource
 		if (!resource.allContents.filter(Collector).toList.isEmpty)
 		
 			this.collector = resource.allContents.filter(Collector).toList.get(0)

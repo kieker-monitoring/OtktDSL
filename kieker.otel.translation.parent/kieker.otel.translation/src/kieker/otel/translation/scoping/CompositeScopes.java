@@ -4,8 +4,8 @@ package kieker.otel.translation.scoping;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.LogManager;
+//import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.resource.IEObjectDescription;
@@ -20,7 +20,7 @@ import kieker.otel.translation.model.ModelGlobalScopeProvider;
 public class CompositeScopes extends AbstractScopeProvider{
 	@Inject
     private KiekerReferenceScopeProvider firstScopeProvider;
-	private static final Logger logger = LogManager.getLogger(CompositeScopes.class);
+	//private static final Logger logger = LogManager.getLogger(CompositeScopes.class);
     @Inject
     private OtelSpanScopeProvider secondScopeProvider;
     

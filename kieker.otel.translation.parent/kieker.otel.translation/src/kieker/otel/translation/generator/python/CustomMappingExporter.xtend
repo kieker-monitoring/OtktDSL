@@ -47,29 +47,27 @@ class CustomMappingExporter {
 	}
 
 	def serializerPutStatement(SpanAttribute obj) {
-		if (obj instanceof SpanAttribute)
-			if (this.isDefault(obj)) {
-				switch obj {
-					case startT.contains(obj): '''self.serializer.put_long(int(span.start_time))'''
-					case finishT.contains(obj): '''self.serializer.put_long(int(span.end_time))'''
-					case trace.contains(obj): '''self.serializer.put_long(self.get_trace_id(span.get_span_context().trace_id))'''
-					case spanId.contains(obj): '''self.serializer.put_long(self.get_span_id(span.get_span_context().span_id))'''
-					case parentSpan.contains(obj): '''parent_span_id = span.parent if span.parent else 0
+		if (this.isDefault(obj)) {
+			switch obj {
+				case startT.contains(obj): '''self.serializer.put_long(int(span.start_time))'''
+				case finishT.contains(obj): '''self.serializer.put_long(int(span.end_time))'''
+				case trace.contains(obj): '''self.serializer.put_long(self.get_trace_id(span.get_span_context().trace_id))'''
+				case spanId.contains(obj): '''self.serializer.put_long(self.get_span_id(span.get_span_context().span_id))'''
+				case parentSpan.contains(obj): '''parent_span_id = span.parent if span.parent else 0
 self.serializer.put_long(parent_span_id)'''
-					default:
-						"Something went wrong"
-				}
-			} else {
-				switch obj.getType().getName() {
-					case "String": '''self.serializer.put_string(span.attributes["«obj.getName()»"])'''
-					case "Int": '''self.serializer.put_int(span.attributes["«obj.getName()»"])'''
-					case "Long": '''self.serializer.put_long(span.attributes["«obj.getName()»"])'''
-					case "Bool": '''self.serializer.put_boolean(span.attributes["«obj.getName()»"])'''
-					default:
-						"Something went wrong"
-				}
+				default:
+					"Something went wrong"
 			}
-
+		} else {
+			switch obj.getType().getName() {
+				case "String": '''self.serializer.put_string(span.attributes["«obj.getName()»"])'''
+				case "Int": '''self.serializer.put_int(span.attributes["«obj.getName()»"])'''
+				case "Long": '''self.serializer.put_long(span.attributes["«obj.getName()»"])'''
+				case "Bool": '''self.serializer.put_boolean(span.attributes["«obj.getName()»"])'''
+				default:
+					"Something went wrong"
+			}
+		}
 	}
 
 	def boolean isDefault(SpanAttribute obj) {
@@ -81,33 +79,26 @@ self.serializer.put_long(parent_span_id)'''
 	def List<CustomMapping> getMappings(NewRecord kiekerRecord) {
 		var result = new ArrayList
 		for (mapping : this.mappings) {
-			if (mapping instanceof CustomMapping) {
-				if (kiekerRecord instanceof NewRecord) {
-					var record = mapping.getTo
-					if (record instanceof NewRecord) {
-						if (record.getName.equals(kiekerRecord.getName))
-							result.add(mapping)
-					}
+			if (mapping instanceof CustomMapping) {	
+				var record = mapping.getTo
+				if (record instanceof NewRecord) {
+					if (record.getName.equals(kiekerRecord.getName))
+						result.add(mapping)
 				}
-
 			}
 		}
-
 		return result
 	}
 
 	def List<CustomMapping> getMappings(DefaultMonitoringRecord kiekerRecord) {
 		var result = new ArrayList
 		for (mapping : this.mappings) {
-			if (mapping instanceof CustomMapping) {
-				if (kiekerRecord instanceof DefaultMonitoringRecord) {
-					var record = mapping.getTo
-					if (record instanceof KiekerRecord) {
-						if (record.getName.equals(kiekerRecord.getName.getName))
-							result.add(mapping)
-					}
+			if (mapping instanceof CustomMapping) {				
+				var record = mapping.getTo
+				if (record instanceof KiekerRecord) {
+					if (record.getName.equals(kiekerRecord.getName.getName))
+						result.add(mapping)
 				}
-
 			}
 		}
 		return result
@@ -144,10 +135,9 @@ self.serializer.put_long(parent_span_id)'''
 			var leftside = rule.getLeftSide()
 			var rightside = rule.getRightSide()
 			var rightParam = rightside.getRefAttribute as RecordAttribute
-			var SpanAttribute param = leftside.getRefAttribute
-			if (param instanceof SpanAttribute)
-				if (rightParam.getName.equals(attribute.getName))
-					return param
+			var SpanAttribute param = leftside.getRefAttribute	
+			if (rightParam.getName.equals(attribute.getName))
+				return param
 		}
 		return null
 	}
@@ -158,11 +148,9 @@ self.serializer.put_long(parent_span_id)'''
 			var rightside = rule.getRightSide()
 			var rightParam = rightside.getRefAttribute as Attribute
 			var SpanAttribute param = leftside.getRefAttribute
-			if (param instanceof SpanAttribute)
-				if (rightParam.getName.equals(attribute.getName))
-					return param
+			if (rightParam.getName.equals(attribute.getName))
+				return param
 		}
 		return null
 	}
-
 }

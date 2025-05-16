@@ -1,14 +1,9 @@
 package kieker.otel.translation.generator.python
 
-
-
 import java.util.List
 import kieker.otel.translation.otkt.SpanAttribute
 
-class PythonProcessorSdk {
-	
-	
-	
+class PythonProcessorSdk {	
 	// customly named span attributes
 	List<SpanAttribute> globalyModifiedAttributes 
 	List<SpanAttribute> parentlyModifiedAttributes
@@ -17,7 +12,6 @@ class PythonProcessorSdk {
 	List<mappingModel.SpanParam>globalDefaults
 	List<mappingModel.SpanParam>parentDefaults
 	
-
 	new(List<SpanAttribute> globals,List<SpanAttribute> parents, List<mappingModel.SpanParam> globalDefaults, List<mappingModel.SpanParam> parentDefaults ) {
 		this.globalyModifiedAttributes = globals
 		this.parentlyModifiedAttributes = parents
@@ -25,8 +19,6 @@ class PythonProcessorSdk {
 		this.parentDefaults = parentDefaults
 		
 	}
-	
-	
 	
 	def generate(){
 	'''
@@ -67,8 +59,8 @@ class PythonProcessorSdk {
 			pass
 	'''
 	}
-	
-	
+
+	/*
 	private def updateParentValue(SpanAttribute attr) {
 		switch (attr.getAnnotation.getLiteral) {
 			case "inc": '''IncrementAttributeSpanProcessor._«attr.getName»+=«attr.getValue»'''
@@ -79,6 +71,7 @@ class PythonProcessorSdk {
 				throw new Exception("Invalid Annotation")
 		}
 	}
+	*/
 
 	private def updatePGlobalValue(SpanAttribute attr) {
 		switch (attr.getAnnotation.getLiteral) {
