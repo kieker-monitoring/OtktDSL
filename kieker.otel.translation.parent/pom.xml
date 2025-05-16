@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <prerequisites>
+    <maven>3.8.1</maven>
+  </prerequisites>
   <groupId>kieker.otel.translation</groupId>
   <version>1.0.0-SNAPSHOT</version>
   <artifactId>kieker.otel.translation.parent</artifactId>
   <packaging>pom</packaging>
+
   <properties>
     <xtextVersion>2.36.0</xtextVersion>
     <mwe2Version>2.19.0</mwe2Version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <!-- Tycho settings -->
+    <mavenOpts>-T 1C</mavenOpts>
     <tycho-version>4.0.8</tycho-version>
-    <!-- Define overridable properties for tycho-surefire-plugin -->
-    <platformSystemProperties/>
-    <moduleProperties/>
-    <systemProperties/>
-    <additionalTestArguments/>
   </properties>
+
   <modules>
     <module>kieker.otel.translation</module>
-    <module>kieker.otel.translation.ide</module>
-    <module>kieker.otel.translation.ui</module>
-    <module>kieker.otel.translation.target</module>
-    <!--<module>kieker.otel.translation.tests</module>
-	<module>kieker.otel.translation.ui.tests</module>-->
+    <!--<module>kieker.otel.translation.ide</module>-->
+    <!--<module>kieker.otel.translation.ui</module>-->
+    <!--<module>kieker.otel.translation.ui.tests</module>-->
+    <!--<module>kieker.otel.translation.tests</module>-->
+    <!--<module>kieker.otel.translation.target</module>-->
     <module>kieker.otel.translation.generator</module>
   </modules>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -38,13 +39,14 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
   <build>
     <plugins>
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-maven-plugin</artifactId>
         <version>${tycho-version}</version>
-        <extensions>true</extensions>
+        <extensions>true</extensions> 
       </plugin>
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
@@ -195,81 +197,21 @@
       </plugins>
     </pluginManagement>
   </build>
-  <repositories>
-    <repository>
-      <id>codehaus-snapshots</id>
-      <name>disable dead 'Codehaus Snapshots' repository, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=481478</name>
-      <url>http://nexus.codehaus.org/snapshots/</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <!-- This must be disabled explicitly, otherwise it is enabled by https://github.com/mojohaus/mojo-parent 
-			which is taken from exec-maven-plugin from at least version 1.6.0 -->
-    <repository>
-      <id>ossrh-snapshots</id>
-      <name>ossrh-snapshots</name>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-    </repository>
-    <!-- This is enabled by /org/sonatype/oss/oss-parent/7 used as parent by 
-			org/xtext/antlr-generator/3.2.1 -->
-    <repository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>codehaus-snapshots</id>
-      <name>disable dead 'Codehaus Snapshots' repository, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=481478</name>
-      <url>http://nexus.codehaus.org/snapshots/</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
-    <pluginRepository>
-      <id>ossrh-snapshots</id>
-      <name>ossrh-snapshots</name>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-    </pluginRepository>
-    <pluginRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
+
   <profiles>
+    <profile>
+      <id>generator</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>   
+      <build>
+        <defaultGoal>package</defaultGoal>
+      </build>
+      <modules>
+          <module>kieker.otel.translation.generator</module>
+      </modules>
+    </profile>
+
     <profile>
       <id>macos</id>
       <activation>
@@ -282,16 +224,8 @@
         <platformSystemProperties>-XstartOnFirstThread</platformSystemProperties>
       </properties>
     </profile>
-    <profile>
-      <id>jdk9-or-newer</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <properties>
-        <moduleProperties>--add-modules=ALL-SYSTEM</moduleProperties>
-      </properties>
-    </profile>
   </profiles>
+
   <dependencies>
     <dependency>
       <groupId>org.eclipse.emf</groupId>

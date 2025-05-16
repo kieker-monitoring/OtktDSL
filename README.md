@@ -14,12 +14,13 @@ The Kieker observability framework features monitoring and analysis capabilities
 
 ## Build
 
-Run the following script:
+
+Run the following:
 ```
-./build.sh
+cd kieker.otel.translation.parent
+./mvnw -P generator
 ```
 The built runnable jar is [here](kieker.otel.translation.parent/kieker.otel.translation.generator/target).
-A builds with and without dependencies are available.
 
 ## Run
 
@@ -31,8 +32,7 @@ java -jar <name-of-the-runnable-jar>.jar <path/to/input.otkt> <path/to/output/fo
 
 ```
 cd kieker.otel.translation.parent
-mvn clean
-cd ..
+./mvnw clean
 ```
 
 ## Examples
