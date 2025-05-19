@@ -29,6 +29,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>otkt</finalName>	
 		<plugins>
 			<!-- Assembly Plugin to create a standalone executable JAR -->
 			<plugin>

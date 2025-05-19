@@ -38,8 +38,7 @@
     </dependencies>
   </dependencyManagement>
 
-  <build>
-    <finalName>otkt</finalName>	  
+  <build>  
     <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
