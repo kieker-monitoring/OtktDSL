@@ -94,8 +94,6 @@ class OtktGenerator extends AbstractGenerator {
 		}
 		
 		// generate python module files
-		var init = new InitGenerator()
-		fsa.generateFile('otkt-gen/otkt/__init__.py', init.generate)
 		var instrument = new InstrumentGenerator()
 		fsa.generateFile('otkt-gen/otkt/tools/instrument.py', instrument.generate)
 		var mapping = new JavaMappingGenerator()
@@ -104,6 +102,11 @@ class OtktGenerator extends AbstractGenerator {
 		fsa.generateFile('otkt-gen/otkt/requirements.txt', requirements.generate)
 		var setup = new SetupGenerator()
 		fsa.generateFile('otkt-gen/otkt/setup.py', setup.generate)
+
+		var init = new InitGenerator()
+		fsa.generateFile('otkt-gen/otkt/__init__.py', init.generate)
+		fsa.generateFile('otkt-gen/otkt/kieker/__init__.py', init.generate)
+		fsa.generateFile('otkt-gen/otkt/tools/__init__.py', init.generate)
 
 		// generate custom kieker reciever
 		val analysisGen = new AnalysisGenerator(records, resource)
