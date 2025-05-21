@@ -101,12 +101,12 @@ class OtktGenerator extends AbstractGenerator {
 		var requirements = new RequirementsGenerator()
 		fsa.generateFile('otkt-gen/otkt/requirements.txt', requirements.generate)
 		var setup = new SetupGenerator()
-		fsa.generateFile('otkt-gen/otkt/setup.py', setup.generate)
+		fsa.generateFile('otkt-gen/setup.py', setup.generate)
 
 		var init = new InitGenerator()
-		fsa.generateFile('otkt-gen/otkt/__init__.py', init.generate)
-		fsa.generateFile('otkt-gen/otkt/kieker/__init__.py', init.generate)
-		fsa.generateFile('otkt-gen/otkt/tools/__init__.py', init.generate)
+		fsa.generateFile('otkt-gen/otkt/__init__.py', "import otkt.kieker\nimport otkt.tools")
+		fsa.generateFile('otkt-gen/otkt/kieker/__init__.py', "")
+		fsa.generateFile('otkt-gen/otkt/tools/__init__.py', "")
 
 		// generate custom kieker reciever
 		val analysisGen = new AnalysisGenerator(records, resource)

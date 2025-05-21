@@ -6,7 +6,7 @@ class InstrumentGenerator implements IPythonGenerator{
 	override generate() {
 		'''
 		from opentelemetry import trace
-		from javaMapping import signature
+		from otkt.tools.javaMapping import signature
 
 		# Create a OTel tracer
 		tracer = trace.get_tracer(__name__)
