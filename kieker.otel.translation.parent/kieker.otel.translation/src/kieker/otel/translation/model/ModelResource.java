@@ -24,20 +24,12 @@ import kiekerrecord.NamedElement;
 
 public class ModelResource extends ResourceImpl {
 
-
-
     public ModelResource(final URI uri) {
         super(uri);
-
-
-
     }
 
     @Override
     public EObject getEObject(final String uriFragment) {
-
-
-
         if (this.getContents().size() == 0) {
             final KiekerRecordModel model = new KiekerRecordSpecification().getKiekerRecordModel();
             // TODO Resource contents is empty, this should not happen.
@@ -60,7 +52,6 @@ public class ModelResource extends ResourceImpl {
 
             }
         }
-
 
         for (final EObject obj : this.getContents()) {
             if (uriFragment.equals(this.getURIFragment(obj))) {
@@ -106,8 +97,6 @@ public class ModelResource extends ResourceImpl {
      */
     @Override
     protected void doLoad(final InputStream inputStream, final Map<?, ?> options) throws IOException {
-
-
         if (this.getURI() != null) {
             final KiekerRecordModel model = new KiekerRecordSpecification().getKiekerRecordModel();
             this.getContents().add(model);

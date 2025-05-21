@@ -12,7 +12,6 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
-
 import kiekerrecord.KiekerrecordFactory;
 import kiekerrecord.NamedElement;
 
@@ -46,9 +45,6 @@ public class ModelScope extends AbstractScope {
         this.qualifiedNameConverter = qualifiedNameConverter;
         this.filter = filter;
     }
-
-
-
 
     @Override
     protected Iterable<IEObjectDescription> getAllLocalElements() {
@@ -127,9 +123,6 @@ public class ModelScope extends AbstractScope {
         for (final NamedElement t : this.modelProvider.getAllElements()) {
             elements.add(this.createScopedElement(t.getName()));
         }
-
-
-
         return elements;
     }
 

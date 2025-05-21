@@ -15,8 +15,8 @@ class OtelInitGenerator implements IPythonGenerator{
 		from opentelemetry.sdk.trace import TracerProvider
 		from opentelemetry.sdk.trace.export import BatchSpanProcessor, SimpleSpanProcessor
 		
-		from otkt.KiekerExporter import KiekerTcpExporter
-		from otkt.KiekerProcessor import IncrementAttributeSpanProcessor
+		from otkt.kieker.KiekerExporter import KiekerTcpExporter
+		from otkt.kieker.KiekerProcessor import IncrementAttributeSpanProcessor
 		
 		trace.set_tracer_provider(TracerProvider())
 		

@@ -9,9 +9,6 @@ import org.eclipse.xtext.scoping.IScopeProvider;
 import kieker.otel.translation.linking.CustomLinkerMappingRule;
 import kieker.otel.translation.scoping.CompositeScopes;
 
-
-
-
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */

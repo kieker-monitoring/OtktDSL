@@ -36,15 +36,17 @@ class AnalysisGenerator {
 
 
 		if (collector !== null) {
+			val projectName = 'otkt-gen/collector'
+
 			val main = new CollectorMain()
 			val port = this.collector.getPort()
 			val buffersize = 65000
-			val shouldConvert=generateRecordClasses("collector", fsa)
+			val shouldConvert=generateRecordClasses(projectName, fsa)
 			val config = new TeeTimeConfigGenerator(port, buffersize, shouldConvert)
 			
-			fsa.generateFile('collector/src/main/java/Main.java', main.generate())
-			fsa.generateFile('collector/src/main/java/CollectorConfiguration.java', config.generate())
-			fsa.generateFile('collector/pom.xml', new PomGenerator("Collector").generate())
+			fsa.generateFile(projectName + '/src/main/java/Main.java', main.generate())
+			fsa.generateFile(projectName + '/src/main/java/CollectorConfiguration.java', config.generate())
+			fsa.generateFile(projectName + '/pom.xml', new PomGenerator("Collector").generate())
 		//	fsa.generateFile('collector/src/main/java/package-info.java', "package collector;")
 
 		}

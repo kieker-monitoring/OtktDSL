@@ -6,15 +6,11 @@ import kieker.otel.translation.otkt.Mapping
 import kieker.otel.translation.otkt.OtelSpan
 
 class PythonNewRecordGenerator extends CustomMappingExporter implements IPythonGenerator {
-	List<NewRecord> newRecords 
+	List<NewRecord> newRecords 	
 	
-	
-	
-	
-	 new(List<NewRecord> newRecords, List<OtelSpan> otelspan, List<Mapping> mappings){
+	new(List<NewRecord> newRecords, List<OtelSpan> otelspan, List<Mapping> mappings){
 		super(otelspan, mappings)
-		this.newRecords = newRecords
-		
+	this.newRecords = newRecords		
 	}
 	
 	override generate() {
@@ -59,12 +55,7 @@ class PythonNewRecordGenerator extends CustomMappingExporter implements IPythonG
 			«ENDFOR»
 			«ENDFOR»
 		'''
-	}
-	
-
-	
-	
-		
-	}
+	}		
+}
 	
 	
