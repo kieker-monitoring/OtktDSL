@@ -19,7 +19,6 @@ import org.eclipse.emf.common.util.EList
 import java.util.List
 import kieker.otel.translation.generator.python.OtelInitGenerator
 
-import  kieker.otel.translation.generator.python.module.InitGenerator
 import  kieker.otel.translation.generator.python.module.InstrumentGenerator
 import  kieker.otel.translation.generator.python.module.JavaMappingGenerator
 import  kieker.otel.translation.generator.python.module.RequirementsGenerator
@@ -103,7 +102,6 @@ class OtktGenerator extends AbstractGenerator {
 		var setup = new SetupGenerator()
 		fsa.generateFile('otkt-gen/setup.py', setup.generate)
 
-		var init = new InitGenerator()
 		fsa.generateFile('otkt-gen/otkt/__init__.py', "import otkt.kieker\nimport otkt.tools")
 		fsa.generateFile('otkt-gen/otkt/kieker/__init__.py', "")
 		fsa.generateFile('otkt-gen/otkt/tools/__init__.py', "")
