@@ -21,8 +21,8 @@ import kieker.otel.translation.generator.python.OtelInitGenerator
 
 import  kieker.otel.translation.generator.python.module.InstrumentGenerator
 import  kieker.otel.translation.generator.python.module.JavaMappingGenerator
-import  kieker.otel.translation.generator.python.module.RequirementsGenerator
 import  kieker.otel.translation.generator.python.module.SetupGenerator
+import  kieker.otel.translation.generator.python.module.MakefileGenerator
 
 /**
  * Generates code from your model files on save.
@@ -97,14 +97,16 @@ class OtktGenerator extends AbstractGenerator {
 		fsa.generateFile('otkt-gen/otkt/tools/instrument.py', instrument.generate)
 		var mapping = new JavaMappingGenerator()
 		fsa.generateFile('otkt-gen/otkt/tools/javaMapping.py', mapping.generate)
-		var requirements = new RequirementsGenerator()
-		fsa.generateFile('otkt-gen/otkt/requirements.txt', requirements.generate)
 		var setup = new SetupGenerator()
 		fsa.generateFile('otkt-gen/setup.py', setup.generate)
 
 		fsa.generateFile('otkt-gen/otkt/__init__.py', "import otkt.kieker\nimport otkt.tools")
 		fsa.generateFile('otkt-gen/otkt/kieker/__init__.py', "")
 		fsa.generateFile('otkt-gen/otkt/tools/__init__.py', "")
+
+		//generate Makefile
+		var makefile = new MakefileGenerator()
+		fsa.generateFile('otkt-gen/Makefile', makefile.generate)
 
 		// generate custom kieker reciever
 		val analysisGen = new AnalysisGenerator(records, resource)
