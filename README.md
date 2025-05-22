@@ -37,7 +37,8 @@ cd kieker.otel.translation.parent
 
 ## Examples
 
-- [Instrumentation Examples](https://github.com/Misrobody/kieker-otel-interoperability)
+- [Instrumentation Examples](https://github.com/Misrobody/OtktDSL-examples)
+- [OtktSurvey](https://github.com/Misrobody/OtktSurvey)
 - [Sustain Kieker Hackathon](https://github.com/kieker-monitoring/SustainKiekerHackathon)
 
 ## Documentation
