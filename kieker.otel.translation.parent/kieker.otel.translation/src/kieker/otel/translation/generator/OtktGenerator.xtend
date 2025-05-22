@@ -23,6 +23,7 @@ import  kieker.otel.translation.generator.python.module.InstrumentGenerator
 import  kieker.otel.translation.generator.python.module.JavaMappingGenerator
 import  kieker.otel.translation.generator.python.module.SetupGenerator
 import  kieker.otel.translation.generator.python.module.MakefileGenerator
+import  kieker.otel.translation.generator.python.module.ConfigGenerator
 
 /**
  * Generates code from your model files on save.
@@ -107,6 +108,10 @@ class OtktGenerator extends AbstractGenerator {
 		//generate Makefile
 		var makefile = new MakefileGenerator()
 		fsa.generateFile('otkt-gen/Makefile', makefile.generate)
+
+		//generate config
+		var config = new ConfigGenerator()
+		fsa.generateFile('otkt-gen/config.txt', config.generate)		
 
 		// generate custom kieker reciever
 		val analysisGen = new AnalysisGenerator(records, resource)
