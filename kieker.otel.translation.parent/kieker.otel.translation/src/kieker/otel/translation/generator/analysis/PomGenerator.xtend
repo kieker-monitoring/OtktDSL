@@ -61,6 +61,18 @@ class PomGenerator {
 					        </execution>
 					    </executions>
 					</plugin>
+					<!-- Disable the default JAR generation -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-jar-plugin</artifactId>
+						<version>3.3.0</version>
+						<executions>
+							<execution>
+								<id>disable-default-jar</id>
+								<phase>none</phase>
+							</execution>
+						</executions>
+					</plugin>
 					</plugins>
 					</build>
 			<dependencies>

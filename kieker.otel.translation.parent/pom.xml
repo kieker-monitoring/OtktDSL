@@ -18,7 +18,7 @@
 
   <modules>
     <module>kieker.otel.translation</module>
-    <module>kieker.otel.translation.target</module>
+    <!--<module>kieker.otel.translation.target</module>-->
     <!--<module>kieker.otel.translation.ide</module>-->
     <!--<module>kieker.otel.translation.ui</module>-->
     <!--<module>kieker.otel.translation.ui.tests</module>-->
