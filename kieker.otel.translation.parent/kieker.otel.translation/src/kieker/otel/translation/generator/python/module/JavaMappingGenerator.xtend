@@ -6,6 +6,8 @@ class JavaMappingGenerator implements IPythonGenerator{
 	override generate() {
 		'''
         import inspect
+        import types
+        from typing import get_args
 
         def signature(func):
             return f'{scope(func)} {return_type(func)} {package(func)}.{fclass(func)}.{fname(func)}({params(func)})'
@@ -15,13 +17,12 @@ class JavaMappingGenerator implements IPythonGenerator{
                 return "private"
             elif func.__name__.startswith("_"):
                 return "protected"
-
             return "public"
 
         def return_type(func):
             if func.__annotations__ and "return" in func.__annotations__.keys():
                 return convert(func.__annotations__["return"])
-            elif "return " in inspect.getsource(func):    
+            elif "return " in inspect.getsource(func):
                 return "Object"
             return "void"
 
@@ -38,17 +39,17 @@ class JavaMappingGenerator implements IPythonGenerator{
             return func.__name__
 
         def params(func):
-            if func.__annotations__: 
+            if func.__annotations__:
                 return params_type(func)
             return params_no_type(func)
 
         def params_type(func):
             return ", ".join(convert(t) for t in func.__annotations__.values())
-                      
+
         def params_no_type(func):
             parameters = inspect.signature(func).parameters
             return ", ".join("Object" for name in parameters if name != "self")
-                      
+
         python_to_java = {
             "int": "int",
             "float": "double",
@@ -68,12 +69,23 @@ class JavaMappingGenerator implements IPythonGenerator{
             "datetime": "Date"
         }
 
-        def convert(type):
-            if type == None:
-                return python_to_java["None"]
-            if type.__name__ not in python_to_java:
-                return "Object"
-            return python_to_java[type.__name__]
+        def convert(t):
+            if isinstance(t, str):
+                return python_to_java.get(t, t)
+
+            if t is None:
+                return python_to_java.get("None", "Object")
+
+            # Handle UnionType (like int | str)
+            if isinstance(t, types.UnionType):
+                return " | ".join(convert(arg) for arg in get_args(t))
+
+            # Handle types without __name__
+            type_name = getattr(t, '__name__', None)
+            if type_name is None:
+                return str(t)  # fallback: str representation
+
+            return python_to_java.get(type_name, "Object")
 		'''
 	}
 }
