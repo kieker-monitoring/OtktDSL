@@ -48,3 +48,4 @@ cd kieker.otel.translation.parent
 - [Otkt Tutorial](docs/OTKT-TUTORIAL.md)
 - [How to Instrument a Python Application](docs/INSTRUMENT.md)
 - [Technical Overview](docs/TECHNICAL-SUMMARY.md)
+- [MSc Thesis](https://oceanrep.geomar.de/id/eprint/61743/)
