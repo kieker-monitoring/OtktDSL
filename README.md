@@ -1,4 +1,4 @@
-# OpenTelemetry for Kieker Translator domain-specific language (Otkt DSL)
+# OpenTelemetry Kieker Translator domain-specific language (Otkt DSL)
 
 ![Otkt logo](docs/img/otkt_logo.svg)
 
