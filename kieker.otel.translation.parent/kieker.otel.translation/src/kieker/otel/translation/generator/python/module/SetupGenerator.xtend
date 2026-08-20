@@ -10,7 +10,7 @@ class SetupGenerator implements IPythonGenerator{
         setup(
             name="otkt",
             version="1.0.0",
-            description="Opentelemetry to Kieker translator for Python",
+            description="Opentelemetry Kieker Translator",
             url="https://github.com/kieker-monitoring/OtktDSL",
             packages=find_packages(),
             install_requires=[
